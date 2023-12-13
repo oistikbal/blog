@@ -60,7 +60,11 @@ class BlogPostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog_post
-      @blog_post = BlogPost.find(params[:id])
+      begin
+        @blog_post = BlogPost.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        redirect_to root_path
+      end
     end
 
     # Only allow a list of trusted parameters through.

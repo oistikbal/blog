@@ -5,10 +5,8 @@
 <div id="blog_posts">
   <% @blog_posts.each do |blog_post| %>
     <%= render blog_post %>
-    <p>
-      <%= link_to "Show this blog post", blog_post %>
-    </p>
   <% end %>
 </div>
 
+<br>    
 <%= link_to "New blog post", new_blog_post_path %>
