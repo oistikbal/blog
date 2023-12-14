@@ -11,7 +11,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="prose mx-auto">
     <h1>Blog</h1>
     <% if user_signed_in? %>
       <%= link_to "New post", new_blog_post_path, method: :get %>
